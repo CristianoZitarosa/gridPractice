@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+ 	<title>Grid practice</title>
+</head>
+<body>
+
+	<h1>GRID Practice</h1>
+	<p>
+		based on MDN article at this <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout" target="blank">LINK</a>
+	</p>
+	<p>
+		What is this for? It is a personal practice of the Grid Layout needed after the lesson 13.15 of Udacity Front-End Developer Nanodegree. It is not meant as a lesson to explain how Grid works, but meanwhile I hope it can be useful to you as a complement to the MDN article.
+	</p>
+	<hr>
+	
+	<article>
+		<p>
+			This container is set to <strong><code>display: grid;</code></strong>
+		</p>
+		<p>
+			The five elements fill horizontally all the available space in a single column. (try to resize tha page)
+		</p>
+	</article>
+	<div class="container-one">
+		<div class="element">1</div>
+		<div class="element">2</div>
+		<div class="element">3</div>
+		<div class="element">4</div>
+		<div class="element">5</div>
+	</div>
+	
+	<article>
+		<p>
+			You can define tracks to span elements in the grid.
+		</p>
+		<p>
+			In this example I define as tracks to span elements 3 columns with: <strong><code>grid-template-columns: repeat(3, 200px);</code></strong>
+		</p>
+		<p>
+			Elements fill the first row with 3 of them, then start from the next row. Please note, the track width is set to 200px wide. It is a fixed size, so resizing it down, it will overflow the flexible container.
+		</p>
+		<p>
+			<strong><code>repeat(3, 200px)</code></strong> is the short of <strong><code>200px 200px 200px</code></strong> For this example 3 tracks, but you can define as much as you need.
+		</p>
+	</article>
+	<div class="container-two">
+		<div class="element">1</div>
+		<div class="element">2</div>
+		<div class="element">3</div>
+		<div class="element">4</div>
+		<div class="element">5</div>
+	</div>
+
+	<article>
+		<p>
+			You can define tracks with units you want.
+		</p>
+		<p>
+			Grid introduces the <strong><code>fr</code></strong> unit, as the fraction of available space. This example is similar to the previous but now the track column width is depending by the width of the page and changes according to the available space <strong><code>grid-template-columns: repeat(3, 1fr);</code></strong>
+		</p>
+	</article>	
+	<div class="container-three">
+		<div class="element">1</div>
+		<div class="element">2</div>
+		<div class="element">3</div>
+		<div class="element">4</div>
+		<div class="element">5</div>
+	</div>
+	
+	<article>
+		<p>In the following example each track has a different weight</p>
+		<p><strong><code>grid-template-columns: 1fr 2fr 3fr;</code></strong></p>
+	</article>
+	<div class="container-four">
+		<div class="element">1</div>
+		<div class="element">2</div>
+		<div class="element">3</div>
+		<div class="element">4</div>
+		<div class="element">5</div>
+	</div>
+	
+	<article>
+		<p>In the following example a mixed use of units and weights. Central tracks have a fixed size.</p>
+		<p><strong><code>grid-template-columns: 1fr 200px 1fr;</code></strong></p>
+	</article>
+	<div class="container-five">
+		<div class="element">1</div>
+		<div class="element">2</div>
+		<div class="element">3</div>
+		<div class="element">4</div>
+		<div class="element">5</div>
+	</div>
+	
+	<article>
+		<p>
+			For the previous examples each element has a fixed height of 50 px. It's time now to introduce <strong><code>grid-auto-rows</code></strong>, following set to 200 px to define how tall a cell has to be instead to let it be set according to its content.
+		</p>
+	</article>
+	<div class="container-six">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+	</div>
+
+	<article>
+		<p>
+			You can customize the appearance of the elements in the grid by setting where they have to span horizontally and vertically by controlling lines numbered from left-to-right and from top-to-bottom
+		</p>
+		<p>
+			To better understand it I suggest you to read it at the MDN link on topof the page, because the explanation is not covered here.
+		</p>
+	</article>
+	<div class="container-seven">
+		<div class="one">1</div>
+		<div class="two">2</div>
+		<div class="three">3</div>
+		<div class="four">4</div>
+		<div class="five">5</div>
+	</div>
+
+	<article>
+		<p>
+			You can set a space between elements by using <strong><code>grid-column-gap</code></strong> and <strong><code>grid-row-gap</code></strong> or the shorthand <strong><code>grid-gap</code></strong>.
+		</p>
+	</article>
+	<div class="container-eight">
+		<div class="element">1</div>
+		<div class="element">2</div>
+		<div class="element">3</div>
+		<div class="element">4</div>
+		<div class="element">5</div>
+	</div>
+
+		<article>
+			<p>
+				Finally, you can nest elements in each element of the main grid. Here I used the same previous example to nest elements in cells n.1 and n.5, so they are now containers of 2 new grids.
+			</p>
+		</article>
+	<div class="container-nine">
+		<div class="one one-container">
+			<div>1.a</div>
+			<div>1.b</div>
+			<div>1.c</div>
+		</div>
+		<div class="two">2</div>
+		<div class="three">3</div>
+		<div class="four">4</div>
+		<div class="five five-container">
+			<div>5.a</div>
+			<div>5.b</div>
+			<div>6.c</div>
+		</div>
+	</div>
+
+	<h3>Thank you for reading!</h3>
+	<p>Author: Cristiano Zitarosa</p>
+
+</body>
+</html>
